@@ -1,9 +1,0 @@
-HTTP/1.0 404 NOT FOUND
-Content-Type: text/html
-
-<HTML><TITLE>Not Found</TITLE>
-<BODY><P>The server could not fulfill
-your request because the resource specified
-is unavailable or nonexistent.
-</BODY></HTML>
-
