@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+INCLUDED_HANDLE_REQUEST_H	handle_request.h	2;"	d
+INCLUDED_HANDLE_RESPONSE_H	handle_response.h	2;"	d
+INCLUDED_TCP_LISTEN_H	tcp_listen.h	2;"	d
+LINESIZE	handle_request.c	43;"	d	file:
+LISTENQ	tcp_listen.h	4;"	d
+METHODSIZE	handle_request.c	44;"	d	file:
+ResponseFunc	handle_request.c	/^typedef void (*ResponseFunc)(int, char *);$/;"	t	file:
+URLSIZE	handle_request.c	45;"	d	file:
+accept_request	handle_request.c	/^void accept_request(int fd)$/;"	f
+cat	handle_response.c	/^void cat(int sockfd, FILE *file)$/;"	f
+get_line	handle_request.c	/^int get_line(int fd, char *buffer, int size)$/;"	f
+handle_GET	handle_response.c	/^void handle_GET(int sockfd, char *path)$/;"	f
+main	main.c	/^int main(int argc, char *argv[])$/;"	f
+methods	handle_request.c	/^const char *methods[] = {$/;"	v
+response_func	handle_request.c	/^ResponseFunc response_func[] = {$/;"	v
+response_header	handle_response.c	/^void response_header(int sockfd, const char *filename)$/;"	f
+tcp_listen	tcp_listen.c	/^int tcp_listen(const char *host, const char *serv)$/;"	f
