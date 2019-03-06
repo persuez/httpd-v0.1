@@ -16,6 +16,8 @@ void handle_GET(int sockfd, char *path);
  *       文件名（以状态码命名）
  * 无返回值
  * ***********************************************/
+void handle_POST(int sockfd, char *path);
+void handle_HEAD(int sockfd, char *path);
 void response_header(int soctfd, const char *filename);
 /************************************************
  * 这个函数将请求文件写到 sockfd 中
@@ -24,5 +26,13 @@ void response_header(int soctfd, const char *filename);
  * 没有返回值
  * ***********************************************/
 void cat(int sockfd, FILE *file);
+/*************************************************
+ * 这个函数在请求返回 200 状态码时调用，写入
+ * 响应头部（除起始行外）信息
+ * 参数：sockfd
+ *       请求资源路径
+ * 没有返回值
+ * ************************************************/
+void success_header(int sockfd, const char *path);
 
 #endif

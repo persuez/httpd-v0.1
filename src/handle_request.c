@@ -40,16 +40,35 @@ int get_line(int fd, char *buffer, int size)
     return i;
 }
 
+int is_safe_url(const char *url)
+{
+    printf("2222222222\n");
+    const char *file = url + 1;
+    int len = strlen(file);
+    printf("file: %s\n", file);
+    if (file[0] == '/' || 
+            strcmp(file, "..") == 0 || 
+            strncmp(file, "../", 3) == 0 || 
+            strstr(file, "/../") != NULL || 
+            ( len > 3 && strcmp(&(file[len - 3]), "/..") == 0) ) {
+        return 0;
+    }
+    return 1;
+}
+
 #define LINESIZE 1024 /* 每行最多 1024 字节 */
 #define METHODSIZE 255
 #define URLSIZE 255
 const char *methods[] = {
     "GET",
-    /* "POST", */
+    "POST",
+    "HEAD",
 };
 typedef void (*ResponseFunc)(int, char *);
 ResponseFunc response_func[] = {
     &handle_GET,
+    &handle_POST,
+    &handle_HEAD,
 };
 void accept_request(int fd)
 {
@@ -95,6 +114,11 @@ void accept_request(int fd)
         i++; j++;
     }
     url[i] = '\0';
+    
+    if (!is_safe_url(url)) {
+        response_header(fd, "400");
+        return;
+    }
 
     /* 格式化 url 到 path 数组，html 文件都在 htdocs 中 */
     sprintf(path, "../htdocs%s", url);
