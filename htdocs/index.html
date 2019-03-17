@@ -1,16 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Stict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"\>
-<html xmlns="http://www.w3.org/1999/xhtml" lang = "zh-CN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<TITLE>Index</TITLE>
+<title>学生成绩评估</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 </head>
-<BODY>
-<P>Welcome to J. David's webserver.
-<H1>CGI demo
-<FORM ACTION="color.cgi" METHOD="POST">
-Enter a color: <INPUT TYPE="text" NAME="color">
-<INPUT TYPE="submit">
-</FORM>
-</BODY>
-</HTML>
-
+<body>
+  <form action="require.cgi" method="post">
+    学生 ID：
+    <input type="text" name="zhanghao" value="" size="10" maxlength="5">
+    <br>
+    <br>
+    课程 ID：<input type="password" value="" name="mima" size="10">
+    <br>
+    <br>
+    <input type="submit" value="查询">
+  </form>
+</body>
+</html>
